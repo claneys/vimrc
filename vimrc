@@ -256,6 +256,9 @@ autocmd BufEnter *.cljs,*.cljs.hl set filetype=clojure
 " Personal
 " ========
 
+" Include path header files customized to be used with AGL Porter demo
+set path=./,/usr/include/,./include/,/xdt/build/tmp/sysroots/porter/usr/include/
+
 " Easier anti-quote
 imap éé `
 
