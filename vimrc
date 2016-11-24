@@ -133,6 +133,7 @@ try
 catch
 endtry
 
+
 " ----------------------------
 "       File Management
 " ----------------------------
@@ -261,6 +262,8 @@ set path=./,/usr/include/,./include/,/xdt/build/tmp/sysroots/porter/usr/include/
 
 " Easier anti-quote
 imap éé `
+imap <Tab> <C-P>
+set cc=80
 
 " -- show the column 81
 " if (exists('+colorcolumn'))
