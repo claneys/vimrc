@@ -11,6 +11,8 @@ The `vimrc` file should be easy to understand and contains almost everything.
 
 for Haskell
 
+        dnf install cabal-install
+        cabal update
         cabal install ghc-mod
 
 And you're done.
