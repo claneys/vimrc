@@ -72,6 +72,8 @@ Plug 'einars/js-beautify'
 
 Plug 'wakatime/vim-wakatime'
 
+Plug 'taglist/vim-taglist'
+
 call plug#end()
 
 set nocompatible
@@ -256,8 +258,12 @@ autocmd BufEnter *.cljs,*.cljs.hl set filetype=clojure
 " Personal
 " ========
 
+" AGL include header path
+set path=./,/usr/include/,./include/,/xdt/build/tmp/sysroots/porter/usr/include/
+
 " Easier anti-quote
 imap éé `
+imap <Tab> <C-P>
 
 " -- show the column 81
 " if (exists('+colorcolumn'))
@@ -278,3 +284,5 @@ autocmd FileType css noremap <buffer> <c-f> :call JsBeautify()<cr>
 
 " -- vim-pandoc folding
 let g:pandoc#modules#disabled = ["folding"]
+
+filetype plugin on
