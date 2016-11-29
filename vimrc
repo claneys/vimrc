@@ -266,10 +266,10 @@ imap éé `
 imap <Tab> <C-P>
 
 " -- show the column 81
-" if (exists('+colorcolumn'))
-"     set colorcolumn=80
-"     highlight ColorColumn ctermbg=1
-" endif
+ if (exists('+colorcolumn'))
+     set colorcolumn=80
+     highlight ColorColumn ctermbg=1
+ endif
 
 " --- type ° to search the word in all files in the current dir
 nmap ° :Ag <c-r>=expand("<cword>")<cr><cr>
