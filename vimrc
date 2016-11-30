@@ -15,7 +15,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/goyo.vim'
 
 " completion during typing
-Plug 'neocomplcache'
+Plug 'neocomplete.vim'
 " solarized colorscheme
 Plug 'altercation/vim-colors-solarized'
 " Right way to handle trailing-whitespace
@@ -96,15 +96,6 @@ set tm=2000
 
 " Auto-checking on writing
 " autocmd BufWritePost *.hs,*.lhs GhcModCheckAndLintAsync
-
-"  neocomplcache (advanced completion)
-" autocmd BufEnter *.hs,*.lhs let g:neocomplcache_enable_at_startup = 1
-" function! SetToCabalBuild()
-"     if glob("*.cabal") != ''
-"         set makeprg=cabal\ build
-"     endif
-" endfunction
-" autocmd BufEnter *.hs,*.lhs :call SetToCabalBuild()
 
 " -- neco-ghc
 let $PATH=$PATH.':'.expand("~/.cabal/bin")
@@ -212,10 +203,10 @@ noremap <C-l> <C-w>l
 cmap w!! w !sudo tee >/dev/null %
 
 " Tabulation management
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
+set tabstop=8
+set softtabstop=8
+set shiftwidth=8
+"set expandtab
 set autoindent
 set smartindent
 set cindent
@@ -253,17 +244,22 @@ autocmd BufEnter *.cljs,*.cljs.hl set filetype=clojure
 "  in your HTML
 " au BufWritePost *.cljs :BCReloadPage
 
+" NeoComplete configuration
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_auto_select = 1
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
 " ========
 " Personal
 " ========
 
 " Include path header files customized to be used with AGL Porter demo
-set path=./,/usr/include/,./include/,/xdt/build/tmp/sysroots/porter/usr/include/
+set path=./,/usr/include/,./include/,/xdt/build/tmp/sysroots/porter/usr/include/,/xdt/sdk/sysroots/cortexa15hf-neon-agl-linux-gnueabi/usr/include
 
 " Easier anti-quote
 imap éé `
-imap <Tab> <C-P>
-set cc=80
+set number
 
 " -- show the column 81
 " if (exists('+colorcolumn'))
@@ -273,7 +269,7 @@ set cc=80
 
 " --- type ° to search the word in all files in the current dir
 nmap ° :Ag <c-r>=expand("<cword>")<cr><cr>
-nnoremap <space>/ :Ag 
+nnoremap <space>/ :Ag
 
 " -- js beautifer
 autocmd FileType javascript noremap <buffer> <c-f> :call JsBeautify()<cr>
@@ -281,6 +277,9 @@ autocmd FileType html noremap <buffer> <c-f> :call JsBeautify()<cr>
 autocmd FileType css noremap <buffer> <c-f> :call JsBeautify()<cr>
 
 " set noswapfile
+set pastetoggle=<C-V>
 
 " -- vim-pandoc folding
 let g:pandoc#modules#disabled = ["folding"]
+
+let g:syntastic_c_inlude_dirs = [ './', '/usr/include/', './include/', '/xdt/build/tmp/sysroots/porter/usr/include/', '/xdt/sdk/sysroots/cortexa15hf-neon-agl-linux-gnueabi/usr/include' ]
