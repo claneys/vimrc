@@ -15,7 +15,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/goyo.vim'
 
 " completion during typing
-Plug 'neocomplete.vim'
+Plug 'Shougo/neocomplete.vim'
 " solarized colorscheme
 Plug 'altercation/vim-colors-solarized'
 " Right way to handle trailing-whitespace
