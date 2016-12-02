@@ -21,7 +21,7 @@ Plug 'altercation/vim-colors-solarized'
 " Right way to handle trailing-whitespace
 Plug 'bronson/vim-trailing-whitespace'
 " NERDTree
-" Plug 'scrooloose/nerdtree'
+ Plug 'scrooloose/nerdtree'
 " Unite
 "   depend on vimproc
 "   you have to go to .vim/plugin/vimproc.vim and do a ./make
@@ -255,12 +255,9 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " ========
 
 " Include path header files customized to be used with AGL Porter demo
-set path=./,/usr/include/,./include/,/xdt/build/tmp/sysroots/porter/usr/include/,/xdt/sdk/sysroots/cortexa15hf-neon-agl-linux-gnueabi/usr/include
+set path=./,/usr/include/,./include/,/xdt/sdk/sysroots/cortexa15hf-neon-agl-linux-gnueabi/usr/include
 
-" Easier anti-quote
-imap éé `
 set number
-
 " -- show the column 81
 if (exists('+colorcolumn'))
     set colorcolumn=80
@@ -282,4 +279,4 @@ set pastetoggle=<C-V>
 " -- vim-pandoc folding
 let g:pandoc#modules#disabled = ["folding"]
 
-let g:syntastic_c_inlude_dirs = [ './', '/usr/include/', './include/', '/xdt/build/tmp/sysroots/porter/usr/include/', '/xdt/sdk/sysroots/cortexa15hf-neon-agl-linux-gnueabi/usr/include' ]
+let g:syntastic_c_inlude_dirs = [ './', '/usr/include/', './include/', '/xdt/sdk/sysroots/cortexa15hf-neon-agl-linux-gnueabi/usr/include' ]
