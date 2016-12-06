@@ -72,7 +72,7 @@ Plug 'einars/js-beautify'
 
 Plug 'wakatime/vim-wakatime'
 
-Plug 'taglist/vim-taglist'
+Plug 'thisivan/vim-taglist'
 
 call plug#end()
 
