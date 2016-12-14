@@ -13,6 +13,10 @@ call plug#begin('~/.vim/plugged')
 
 " Distraction Free Writting
 Plug 'junegunn/goyo.vim'
+" QML, Qmake and bitbake recipe syntax
+Plug 'peterhoeg/vim-qml'
+Plug 'artoj/qmake-syntax-vim'
+Plug 'kergoth/vim-bitbake'
 
 " completion during typing
 Plug 'Shougo/neocomplete.vim'
