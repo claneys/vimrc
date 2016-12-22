@@ -18,6 +18,8 @@ Plug 'peterhoeg/vim-qml'
 Plug 'artoj/qmake-syntax-vim'
 Plug 'kergoth/vim-bitbake'
 
+" Bitbake syntax
+Plug 'kergoth/vim-bitbake'
 " completion during typing
 Plug 'Shougo/neocomplete.vim'
 " solarized colorscheme
@@ -259,6 +261,9 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " ========
 " Personal
 " ========
+
+" add ts to javascript language extension
+autocmd BufEnter *.ts set filetype=javascript
 
 " Include path header files customized to be used with AGL Porter demo
 set path=./,/usr/include/,./include/,/xdt/sdk/sysroots/cortexa15hf-neon-agl-linux-gnueabi/usr/include
