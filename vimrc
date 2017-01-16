@@ -128,7 +128,7 @@ nmap gN <Plug>GitGutterPrevHunk
 " -- solarized theme
 set background=dark
 try
-    colorscheme solarized
+    colorscheme desert
 catch
 endtry
 
