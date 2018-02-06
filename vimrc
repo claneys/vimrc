@@ -293,3 +293,8 @@ let g:pandoc#modules#disabled = ["folding"]
 filetype plugin on
 let g:syntastic_c_auto_refresh_includes = 1
 let b:syntastic_c_cflags = ' -I/xdt/sdk/sysroots/cortexa15hf-neon-agl-linux-gnueabi/usr/include'
+
+set viminfo=
+setlocal cm=blowfish2
+
+
