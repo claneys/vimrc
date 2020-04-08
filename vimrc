@@ -297,4 +297,6 @@ let b:syntastic_c_cflags = ' -I/xdt/sdk/sysroots/cortexa15hf-neon-agl-linux-gnue
 set viminfo=
 setlocal cm=blowfish2
 
+" Strip trailing whitespace when saving
+autocmd BufWritePre * %s/\s\+$//e
 
